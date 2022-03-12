@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>移动互联网开发-WIFI-DIRECT | ZWN's blog</title><meta name="keywords" content="移动"><meta name="author" content="ZWN"><meta name="copyright" content="ZWN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="技术介绍 2010年10月，Wi-Fi Alliance（wi-fi联盟）发布Wi-Fi Direct白皮书，白皮书中介绍了有关于这种技术的基本信息、这种技术的特点和这种技术的功能， Wi-Fi Direct标准是指允许无线网络中的设备无需通过无线路由器即可相互连接。与蓝牙技术类似，这种标准允许无线设备以点对点形式互连，而且在传输速度与传输距离方面则比蓝牙有大幅提升。 WIFI Direct有什么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动互联网开发-WIFI-DIRECT">
+<meta property="og:url" content="https://zwn2001.github.io/2022/03/10/%E7%A7%BB%E5%8A%A8%E4%BA%92%E8%81%94%E7%BD%91%E5%BC%80%E5%8F%91-WIFI-DIRECT/index.html">
+<meta property="og:site_name" content="ZWN&#39;s blog">
+<meta property="og:description" content="技术介绍 2010年10月，Wi-Fi Alliance（wi-fi联盟）发布Wi-Fi Direct白皮书，白皮书中介绍了有关于这种技术的基本信息、这种技术的特点和这种技术的功能， Wi-Fi Direct标准是指允许无线网络中的设备无需通过无线路由器即可相互连接。与蓝牙技术类似，这种标准允许无线设备以点对点形式互连，而且在传输速度与传输距离方面则比蓝牙有大幅提升。 WIFI Direct有什么">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zwn2001.github.io/img/default_top_img/6.jpg">
+<meta property="article:published_time" content="2022-03-10T08:50:59.000Z">
+<meta property="article:modified_time" content="2022-03-12T05:29:02.882Z">
+<meta property="article:author" content="ZWN">
+<meta property="article:tag" content="移动">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zwn2001.github.io/img/default_top_img/6.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zwn2001.github.io/2022/03/10/%E7%A7%BB%E5%8A%A8%E4%BA%92%E8%81%94%E7%BD%91%E5%BC%80%E5%8F%91-WIFI-DIRECT/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/pwa/16.png"/><link rel="mask-icon" href="/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ZWN","link":"链接: ","source":"来源: ZWN's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '移动互联网开发-WIFI-DIRECT',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-12 13:29:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/default_top_img/6.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ZWN's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">移动互联网开发-WIFI-DIRECT</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-10T08:50:59.000Z" title="发表于 2022-03-10 16:50:59">2022-03-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-12T05:29:02.882Z" title="更新于 2022-03-12 13:29:02">2022-03-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="移动互联网开发-WIFI-DIRECT"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>技术介绍</h1>
+<p>2010年10月，Wi-Fi Alliance（wi-fi联盟）发布Wi-Fi Direct白皮书，白皮书中介绍了有关于这种技术的基本信息、这种技术的特点和这种技术的功能，</p>
+<p>Wi-Fi Direct标准是指允许无线网络中的设备无需通过无线路由器即可相互连接。与蓝牙技术类似，这种标准允许无线设备以点对点形式互连，而且在传输速度与传输距离方面则比蓝牙有大幅提升。</p>
+<h2 id="WIFI-Direct有什么好处？（特点）">WIFI Direct有什么好处？（特点）</h2>
+<p>1、无线网络中的设备<strong>无需通过无线路由器即可相互连接</strong>；<br>
+2、<strong>支持一对一直连，也可以实现多台设备同时连接</strong>；<br>
+3、支持所有的Wi-Fi设备，从11a/b/g至11n，<strong>不同标准的Wi-Fi设备之间也可以直接互联</strong>；<br>
+4、移动性与便携性：Wi-Fi Direct设备能够随时随地实现互相连接。由于不需要Wi-Fi路由器或接入点，因此<strong>Wi-Fi</strong>设备可以在任何地点实现连接。<br>
+5、即时可用性：用户将得以利用带回家的第一部Wi-Fi Direct认证设备建立直接连接。例如，一部新购买的Wi-Fi Direct笔记本可以与用户已有的传统Wi-Fi设备创建直接连接。<br>
+6、易用性：Wi-Fi Direct设备发现（Device Discovery）与服务发现（Service Discovery）功能帮助用户确定可用的设备与服务，然后建立连接。例如，如果用户想要打印文件，他们可以通过上述服务连接到哪个Wi-Fi网络拥有打印机。<br>
+7、简单而安全的连接：Wi-Fi Direct设备采用Wi-Fi Protected Setup™简化了在设备之间创建安全连接的过程。用户可以按下任一设备上的按钮，也可以输入PIN码（即设备显示的PIN码），轻松创建安全连接。</p>
+<p>也可以这么理解：Wi-Fi Direct技术是Wi-Fi产业链向蓝牙技术发起的挑战，它试图完全取代蓝牙。</p>
+<h1>报错与解决</h1>
+<blockquote>
+<p>The minCompileSdk (31) specified in a dependency’s AAR metadata (META-INF/com/android/build/gradle/aar-metadata.properties) is greater than this module’s compileSdkVersion (android-30).<br>
+Dependency: androidx.appcompat:appcompat:1.6.0-alpha01.</p>
+</blockquote>
+<p>但我看了一眼我依赖用的是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation <span class="string">&#x27;androidx.appcompat:appcompat:1.3.0&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>有点不明所以但将编译版本还是改成了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compileSdkVersion <span class="number">31</span></span><br></pre></td></tr></table></figure>
+<p>然后要对所有使用<code>&lt;intent-filter&gt;</code>的activity加<code>android:exported=&quot;true&quot;</code>(Manifest里)</p>
+<blockquote>
+<p>应该是<code>android-31</code>新加的特性</p>
+</blockquote>
+<h1>技术要点</h1>
+<h2 id="原生">原生</h2>
+<p>这里用了一个很久以前写的练手项目，翻出来的时候只剩源码和注释了。当初开发时借鉴了一个开源项目，因为注释齐全就一直留着，现在来补充一些文档。</p>
+<h3 id="主要的技术点">主要的技术点</h3>
+<ul>
+<li>广播机制的理解与监听</li>
+<li>聊天界面的构建（UI问题，easy，不过多分析，做好状态管理就好，尤其是异步）</li>
+<li>service</li>
+<li>数据传输</li>
+</ul>
+<h3 id="逻辑流程">逻辑流程</h3>
+<p><img src="0.png" alt="逻辑流程"></p>
+<h3 id="广播机制">广播机制</h3>
+<p>在本项目中我们只需要接收广播，或者说，我们更侧重于<code>receiver</code>。</p>
+<p>一方面，我们要设置对哪些广播进行监听，或者说，如何对所有广播进行过滤。</p>
+<p>另一方面，我们要实现我们的监听后的主体功能，也就是如何重写<code>onReceive</code>。</p>
+<h4 id="过滤">过滤</h4>
+<p>过滤器会在注册广播接收器时用到，所以我们将其作为广播接收器类的静态成员即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IntentFilter <span class="title">getIntentFilter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    IntentFilter intentFilter = <span class="keyword">new</span> IntentFilter();</span><br><span class="line">    intentFilter.addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION);</span><br><span class="line">    intentFilter.addAction(WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION);</span><br><span class="line">    intentFilter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);</span><br><span class="line">    intentFilter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);</span><br><span class="line">    <span class="keyword">return</span> intentFilter;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然还有其他事件可以监听。</p>
+<h4 id="监听">监听</h4>
+<p>针对我们过滤器的监听内容，我们分别定义各自的处理函数即可。</p>
+<p>这里要注意的是，我们需要将获取到的信息通知到<code>WifiP2pManager</code>，那么在广播接收器的类中，我们需要<code>WifiP2pManager</code>对象作为参数，这个对象需要先于<code>WifiBroadcastReceiver</code>完成初始化，在<code>WifiBroadcastReceiver</code>对象销毁后由java垃圾处理机制自行回收。</p>
+<p>同时，重写<code>WifiP2pManager.ChannelListener</code>接口，对channel进行监听。</p>
+<p><code>WifiP2pManager</code>对象并没有完全执行操作的能力，相反得，他正是通过在操作（函数）中绑定相应的监听器来达到监听并处理结果的功能。</p>
+<p>项目中只用了<code>ChannelListener</code>和<code>ActionListener</code>，还有其他没有使用到的监听器，分别对应不同的功能。通过分监听器的方式完成操作轻量化与解耦。</p>
+<p>至于为啥没有重写<code>ActionListener</code>接口，因为这个监听器本身就是用于判断操作返回值，或者说，判断函数是否成功的。</p>
+<h3 id="UI要点">UI要点</h3>
+<p>聊天界面的图片加载使用的是<a target="_blank" rel="noopener" href="https://muyangmin.github.io/glide-docs-cn/"><code>Glide</code></a>。界面整体是一个<code>RecyclerView</code>，如果你问为啥不用<code>LIstView</code>，那我只能拿他的性能跟你侃一会儿了，这点《第一行代码》中也有提到，不再赘述。</p>
+<h4 id="LayoutInflater"><code>LayoutInflater</code></h4>
+<p>聊天界面的信息都是使用<code>LayoutInflater</code>进行布局加载然后调用对应的<code>Holder</code>进行UI渲染的。</p>
+<p><code>LayoutInflater</code>使用的方法：<br>
+<code>LayoutInflater.inflate(@LayoutRes int resource, @Nullable ViewGroup root, boolean attachToRoot)</code>。<br>
+可以看到，它总共需要三个参数，分别为：</p>
+<ul>
+<li>resource：布局资源文件，也就是我们将要根据它来创建新的视图。</li>
+<li>root：根布局。可以设置为<code>Null</code>。如果为<code>Null</code>，<strong>那新布局（第一个参数）的根布局参数（注意：是新视图的根布局）就不会被设置成任何布局参数，只有等添加到父布局时候，重新赋给这个根布局新的布局参数，并且第三个参数将毫无作用</strong>。我们在第三个参数讲解第二个参数在非Null情况。</li>
+<li>attachToRoot：<strong>是否将新的布局添加到根布局（root)，记住这个参数只有在第二个参数非Null的情况才生效</strong>。如果此参数为<code>false</code>，那么新的视图不会被添加进根布局，只会将新的视图根布局的布局参数转换成<code>root</code>的根布局参数。如果此参数为<code>true</code>，那么除了将新的视图根布局的布局参数转换成<code>root</code>的根布局参数，<code>LayoutInflater</code>还会调用<code>root.addView(temp, params)</code>方法，将新的视图添加进根布局。</li>
+</ul>
+<p>再深究就涉及到太多安卓<code>View</code>的原理了，故点到为止。但我觉得，基本的视图树的概念还是要有的。</p>
+<h4 id="异步与状态管理">异步与状态管理</h4>
+<p><a href="https://zwn2001.github.io/2021/10/27/%E7%BD%91%E7%BB%9C%E7%9A%84%E5%BC%82%E6%AD%A5/">我的博客：异步与状态管理</a></p>
+<h3 id="service">service</h3>
+<h2 id="Flutter">Flutter</h2>
+<p>Flutter对WiFi直连的实现是来自<a target="_blank" rel="noopener" href="https://pub.flutter-io.cn/packages/flutter_p2p_plus"><code>flutter_p2p_plus: ^1.0.2</code></a>，本质上其实是通过<code>PlatformChannel</code>对原生函数进行的封装。</p>
+<p>相较于原生的整个开发，flutter封装了广播的监听器以及WiFi的事件监听器并预留了接口，并对<code>WiFiP2pManager</code>及其<code>channel</code>进行了封装，简化了整个操作流程。（虽然这给调试带来了一些困难）。</p>
+<h1>参考</h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/300975829">WIFI Direct是什么？有什么好处？</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2a70861fd0fa">LayoutInflater</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">ZWN</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zwn2001.github.io/2022/03/10/%E7%A7%BB%E5%8A%A8%E4%BA%92%E8%81%94%E7%BD%91%E5%BC%80%E5%8F%91-WIFI-DIRECT/">https://zwn2001.github.io/2022/03/10/%E7%A7%BB%E5%8A%A8%E4%BA%92%E8%81%94%E7%BD%91%E5%BC%80%E5%8F%91-WIFI-DIRECT/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ZWN2001.github.io" target="_blank">ZWN's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%A7%BB%E5%8A%A8/">移动</a></div><div class="post_share"><div class="social-share" data-image="/img/default_top_img/6.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/11/%E5%AE%89%E5%8D%93%E5%8E%9F%E7%94%9F-%E5%B9%BF%E6%92%AD/"><img class="prev-cover" src="/img/default_top_img/37.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">安卓原生-广播</div></div></a></div><div class="next-post pull-right"><a href="/2022/02/26/opencv-basic/"><img class="next-cover" src="/img/default_top_img/3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">opencv_basic</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/02/26/2022-sdu-online-core-member-interview/" title="2022_sdu_online_core_member_interview"><img class="cover" src="/img/default_top_img/58.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-26</div><div class="title">2022_sdu_online_core_member_interview</div></div></a></div><div><a href="/2022/01/17/%E5%AD%A6%E7%BA%BF%E5%9F%B9%E8%AE%AD%EF%BC%9Awinter-flutter%EF%BC%9AMethodChannel%E4%B8%8E%E6%A1%8C%E9%9D%A2%E7%BB%84%E4%BB%B6/" title="学线培训：winter-flutter：PlatformChannel与桌面组件"><img class="cover" src="/img/default_top_img/27.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-17</div><div class="title">学线培训：winter-flutter：PlatformChannel与桌面组件</div></div></a></div><div><a href="/2022/01/07/%E5%AD%A6%E7%BA%BF%E5%9F%B9%E8%AE%AD-winter-flutter-1/" title="学线培训:winter-flutter-1"><img class="cover" src="/img/default_top_img/21.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-07</div><div class="title">学线培训:winter-flutter-1</div></div></a></div><div><a href="/2022/01/26/%E5%AD%A6%E7%BA%BF%E5%9F%B9%E8%AE%AD-winter-flutter-%E7%BD%91%E7%BB%9C%E3%80%81%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5/" title="学线培训:winter-flutter:网络、同步与异步"><img class="cover" src="/img/default_top_img/38.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-26</div><div class="title">学线培训:winter-flutter:网络、同步与异步</div></div></a></div><div><a href="/2021/11/17/%E5%AD%A6%E7%BA%BF%E7%A7%BB%E5%8A%A8%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BE%8B%E4%BC%9A/" title="学线移动第一次例会"><img class="cover" src="/img/default_top_img/19.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-17</div><div class="title">学线移动第一次例会</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ZWN</div><div class="author-info__description">我虽无意逐鹿，却知苍生苦楚</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ZWN2001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ZWN2001" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">ZWN的新博客站</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">技术介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WIFI-Direct%E6%9C%89%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%84%EF%BC%9F%EF%BC%88%E7%89%B9%E7%82%B9%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">WIFI Direct有什么好处？（特点）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">报错与解决</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">技术要点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F"><span class="toc-number">3.1.</span> <span class="toc-text">原生</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%9A%84%E6%8A%80%E6%9C%AF%E7%82%B9"><span class="toc-number">3.1.1.</span> <span class="toc-text">主要的技术点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E6%B5%81%E7%A8%8B"><span class="toc-number">3.1.2.</span> <span class="toc-text">逻辑流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6"><span class="toc-number">3.1.3.</span> <span class="toc-text">广播机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4"><span class="toc-number">3.1.3.1.</span> <span class="toc-text">过滤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E5%90%AC"><span class="toc-number">3.1.3.2.</span> <span class="toc-text">监听</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UI%E8%A6%81%E7%82%B9"><span class="toc-number">3.1.4.</span> <span class="toc-text">UI要点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#LayoutInflater"><span class="toc-number">3.1.4.1.</span> <span class="toc-text">LayoutInflater</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E4%B8%8E%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86"><span class="toc-number">3.1.4.2.</span> <span class="toc-text">异步与状态管理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#service"><span class="toc-number">3.1.5.</span> <span class="toc-text">service</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter"><span class="toc-number">3.2.</span> <span class="toc-text">Flutter</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/03/11/%E5%AE%89%E5%8D%93%E5%8E%9F%E7%94%9F-%E6%9C%8D%E5%8A%A1/" title="安卓原生-服务"><img src="/img/default_top_img/49.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安卓原生-服务"/></a><div class="content"><a class="title" href="/2022/03/11/%E5%AE%89%E5%8D%93%E5%8E%9F%E7%94%9F-%E6%9C%8D%E5%8A%A1/" title="安卓原生-服务">安卓原生-服务</a><time datetime="2022-03-11T14:11:14.000Z" title="发表于 2022-03-11 22:11:14">2022-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/11/%E5%AE%89%E5%8D%93%E5%8E%9F%E7%94%9F-%E5%B9%BF%E6%92%AD/" title="安卓原生-广播"><img src="/img/default_top_img/37.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安卓原生-广播"/></a><div class="content"><a class="title" href="/2022/03/11/%E5%AE%89%E5%8D%93%E5%8E%9F%E7%94%9F-%E5%B9%BF%E6%92%AD/" title="安卓原生-广播">安卓原生-广播</a><time datetime="2022-03-11T14:11:03.000Z" title="发表于 2022-03-11 22:11:03">2022-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/10/%E7%A7%BB%E5%8A%A8%E4%BA%92%E8%81%94%E7%BD%91%E5%BC%80%E5%8F%91-WIFI-DIRECT/" title="移动互联网开发-WIFI-DIRECT"><img src="/img/default_top_img/6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="移动互联网开发-WIFI-DIRECT"/></a><div class="content"><a class="title" href="/2022/03/10/%E7%A7%BB%E5%8A%A8%E4%BA%92%E8%81%94%E7%BD%91%E5%BC%80%E5%8F%91-WIFI-DIRECT/" title="移动互联网开发-WIFI-DIRECT">移动互联网开发-WIFI-DIRECT</a><time datetime="2022-03-10T08:50:59.000Z" title="发表于 2022-03-10 16:50:59">2022-03-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/26/opencv-basic/" title="opencv_basic"><img src="/img/default_top_img/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="opencv_basic"/></a><div class="content"><a class="title" href="/2022/02/26/opencv-basic/" title="opencv_basic">opencv_basic</a><time datetime="2022-02-26T11:12:12.000Z" title="发表于 2022-02-26 19:12:12">2022-02-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/26/2022-sdu-online-core-member-interview/" title="2022_sdu_online_core_member_interview"><img src="/img/default_top_img/58.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022_sdu_online_core_member_interview"/></a><div class="content"><a class="title" href="/2022/02/26/2022-sdu-online-core-member-interview/" title="2022_sdu_online_core_member_interview">2022_sdu_online_core_member_interview</a><time datetime="2022-02-26T08:23:16.000Z" title="发表于 2022-02-26 16:23:16">2022-02-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By ZWN</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">喵喵喵？</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label>✨ 网站已更新最新版本 👉</label> <a href="javascript:void(0)" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")}));</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
