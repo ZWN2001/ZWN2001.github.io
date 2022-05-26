@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>让Onedrive云盘同步本地任意一个文件夹（适用于Windows）</title>
+      <link href="/2022/05/26/%E8%AE%A9Onedrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EWindows%EF%BC%89/"/>
+      <url>/2022/05/26/%E8%AE%A9Onedrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EWindows%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>暑假要换硬盘了，到时候估计还会用到</p><p>转自<a href="https://blog.csdn.net/qq_41933331/article/details/86761373">让Onedrive云盘同步本地任意一个文件夹（适用于Windows）</a></p><p>作者<a href="https://blog.csdn.net/qq_41933331">Caleb_Sung</a></p><h1>关于mklink命令</h1><h2 id="简介">简介</h2><p>NTFS 符号链接又称“符号链接”，是 NTFS 文件系统中指向文件系统中的另一个对象的一类对象，被指向的对象叫做“目标”。mklink 是 Windows 下用于创建符号链接的工具，存在于 Windows Vista 及以后版本的 Windows 操作系统中。</p><h3 id="使用方式">使用方式</h3><p>MKLINK [[/D] | [/H] | [/J]] Link Target<br>说明：<br>/D 创建目录符号链接而不是文件符号链接（默认为文件符号链接）<br>/H 创建硬链接而不是符号链接<br>/J 创建目录连接点<br>Link 指定新的符号链接名称<br>Target 指定新链接引用的路径（绝对路径或者相对路径均可）</p><h3 id="注意">注意</h3><p>参数 Link 和 Target 要求不能使用 Windows 中不允许用作文件名的字符（\ / : * ? &quot; &lt; &gt; |）。并且如果 Link 和 Target 这两个参数中需要包含空格，则必须使用英文双引号将内容引起来，以避免参数识别错误。</p><h3 id="限制">限制</h3><p>符号链接在系统启动的时候是不工作的，所以下面这些文件（夹）是不可以作为符号链接替换的：<br>\Windows<br>\Windows\system32<br>\Windows\system32\config</p><h2 id="具体操作方法">具体操作方法</h2><p>打开Onedrive，在右下角系统托盘上点击右键，选择设置。</p><p>选择“自动保存”选项卡，在“保护重要文件夹”中勾选文档。这一步的操作是为了保证文档文件夹中的内容电脑时刻与云端保持同步。注意：选择之后本地的文档将成为指向Onedrive文件夹的目录，因此保存在其中的虚拟机或VS工程文件等有可能出现无法读取的现象，请注意在操作后进行调整。</p><p>假设我要同步的本地文件夹是E:\工作，而Onedrive在本地的保存目录为C:\Users\用户名\OneDrive。</p><p>以管理员模式打开命令提示符（Win10用户可直接搜索cmd，然后右键命令提示符搜索结果的程序，选择以管理员权限运行）。在打开的窗口中输入命令：<code>mklink /d C:\Users\用户名\OneDrive\工作 E:\工作</code>。注意：执行本操作时请确保C:\Users\用户名\OneDrive下没有名为“工作”的目录，否则将会报错（而且E下也不能有工作这一文件夹，ZWN注）。</p><p>回车键执行后，命令提示符返回“……创建的文件链接”字样的文字，即说明建立连接成功。</p><p>注意：如果文件目录中包含空格，则在输入命令的时候应使用英文双引号将该完整目录括起来。</p><p>到这里，所有的步骤就完成了，你可以尝试进行添加文件，删除文件操作。你会发现，两个不同地址的文件随时在保持着同步（同一个文件拥有了两个地址：原地址和Onedrive目录下的地址）。同理，当打开Onedrive文件同步功能是，该目录下的文件也与云端保持着一致。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 转载与汇总 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 实用知识(杂谈) </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>学线移动的两年：安卓从小白到进阶</title>
       <link href="/2022/05/16/%E5%AD%A6%E7%BA%BF%E7%A7%BB%E5%8A%A8%E7%9A%84%E4%B8%A4%E5%B9%B4-%E5%AE%89%E5%8D%93%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E8%BF%9B%E9%98%B6/"/>
       <url>/2022/05/16/%E5%AD%A6%E7%BA%BF%E7%A7%BB%E5%8A%A8%E7%9A%84%E4%B8%A4%E5%B9%B4-%E5%AE%89%E5%8D%93%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E8%BF%9B%E9%98%B6/</url>

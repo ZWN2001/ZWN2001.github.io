@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>让Onedrive云盘同步本地任意一个文件夹（适用于Windows） | ZWN's blog</title><meta name="keywords" content="实用知识(杂谈)"><meta name="author" content="ZWN"><meta name="copyright" content="ZWN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="暑假要换硬盘了，到时候估计还会用到 转自让Onedrive云盘同步本地任意一个文件夹（适用于Windows） 作者Caleb_Sung 关于mklink命令 简介 NTFS 符号链接又称“符号链接”，是 NTFS 文件系统中指向文件系统中的另一个对象的一类对象，被指向的对象叫做“目标”。mklink 是 Windows 下用于创建符号链接的工具，存在于 Windows Vista 及以后版本的 W">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让Onedrive云盘同步本地任意一个文件夹（适用于Windows）">
+<meta property="og:url" content="https://zwn2001.github.io/2022/05/26/%E8%AE%A9Onedrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EWindows%EF%BC%89/index.html">
+<meta property="og:site_name" content="ZWN&#39;s blog">
+<meta property="og:description" content="暑假要换硬盘了，到时候估计还会用到 转自让Onedrive云盘同步本地任意一个文件夹（适用于Windows） 作者Caleb_Sung 关于mklink命令 简介 NTFS 符号链接又称“符号链接”，是 NTFS 文件系统中指向文件系统中的另一个对象的一类对象，被指向的对象叫做“目标”。mklink 是 Windows 下用于创建符号链接的工具，存在于 Windows Vista 及以后版本的 W">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zwn2001.github.io/img/default_top_img/53.jpg">
+<meta property="article:published_time" content="2022-05-26T13:24:50.000Z">
+<meta property="article:modified_time" content="2022-05-26T13:30:49.859Z">
+<meta property="article:author" content="ZWN">
+<meta property="article:tag" content="实用知识(杂谈)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zwn2001.github.io/img/default_top_img/53.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zwn2001.github.io/2022/05/26/%E8%AE%A9Onedrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EWindows%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/pwa/16.png"/><link rel="mask-icon" href="/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: ZWN","link":"链接: ","source":"来源: ZWN's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '让Onedrive云盘同步本地任意一个文件夹（适用于Windows）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-26 21:30:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/default_top_img/53.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ZWN's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">让Onedrive云盘同步本地任意一个文件夹（适用于Windows）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-26T13:24:50.000Z" title="发表于 2022-05-26 21:24:50">2022-05-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-26T13:30:49.859Z" title="更新于 2022-05-26 21:30:49">2022-05-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AC%E8%BD%BD%E4%B8%8E%E6%B1%87%E6%80%BB/">转载与汇总</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">810</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="让Onedrive云盘同步本地任意一个文件夹（适用于Windows）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>暑假要换硬盘了，到时候估计还会用到</p>
+<p>转自<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41933331/article/details/86761373">让Onedrive云盘同步本地任意一个文件夹（适用于Windows）</a></p>
+<p>作者<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41933331">Caleb_Sung</a></p>
+<h1>关于mklink命令</h1>
+<h2 id="简介">简介</h2>
+<p>NTFS 符号链接又称“符号链接”，是 NTFS 文件系统中指向文件系统中的另一个对象的一类对象，被指向的对象叫做“目标”。mklink 是 Windows 下用于创建符号链接的工具，存在于 Windows Vista 及以后版本的 Windows 操作系统中。</p>
+<h3 id="使用方式">使用方式</h3>
+<p>MKLINK [[/D] | [/H] | [/J]] Link Target<br>
+说明：<br>
+/D 创建目录符号链接而不是文件符号链接（默认为文件符号链接）<br>
+/H 创建硬链接而不是符号链接<br>
+/J 创建目录连接点<br>
+Link 指定新的符号链接名称<br>
+Target 指定新链接引用的路径（绝对路径或者相对路径均可）</p>
+<h3 id="注意">注意</h3>
+<p>参数 Link 和 Target 要求不能使用 Windows 中不允许用作文件名的字符（\ / : * ? &quot; &lt; &gt; |）。并且如果 Link 和 Target 这两个参数中需要包含空格，则必须使用英文双引号将内容引起来，以避免参数识别错误。</p>
+<h3 id="限制">限制</h3>
+<p>符号链接在系统启动的时候是不工作的，所以下面这些文件（夹）是不可以作为符号链接替换的：<br>
+\Windows<br>
+\Windows\system32<br>
+\Windows\system32\config</p>
+<h2 id="具体操作方法">具体操作方法</h2>
+<p>打开Onedrive，在右下角系统托盘上点击右键，选择设置。</p>
+<p>选择“自动保存”选项卡，在“保护重要文件夹”中勾选文档。这一步的操作是为了保证文档文件夹中的内容电脑时刻与云端保持同步。注意：选择之后本地的文档将成为指向Onedrive文件夹的目录，因此保存在其中的虚拟机或VS工程文件等有可能出现无法读取的现象，请注意在操作后进行调整。</p>
+<p>假设我要同步的本地文件夹是E:\工作，而Onedrive在本地的保存目录为C:\Users\用户名\OneDrive。</p>
+<p>以管理员模式打开命令提示符（Win10用户可直接搜索cmd，然后右键命令提示符搜索结果的程序，选择以管理员权限运行）。在打开的窗口中输入命令：<code>mklink /d C:\Users\用户名\OneDrive\工作 E:\工作</code>。注意：执行本操作时请确保C:\Users\用户名\OneDrive下没有名为“工作”的目录，否则将会报错（而且E下也不能有工作这一文件夹，ZWN注）。</p>
+<p>回车键执行后，命令提示符返回“……创建的文件链接”字样的文字，即说明建立连接成功。</p>
+<p>注意：如果文件目录中包含空格，则在输入命令的时候应使用英文双引号将该完整目录括起来。</p>
+<p>到这里，所有的步骤就完成了，你可以尝试进行添加文件，删除文件操作。你会发现，两个不同地址的文件随时在保持着同步（同一个文件拥有了两个地址：原地址和Onedrive目录下的地址）。同理，当打开Onedrive文件同步功能是，该目录下的文件也与云端保持着一致。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">ZWN</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zwn2001.github.io/2022/05/26/%E8%AE%A9Onedrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EWindows%EF%BC%89/">https://zwn2001.github.io/2022/05/26/%E8%AE%A9Onedrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EWindows%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ZWN2001.github.io" target="_blank">ZWN's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AE%9E%E7%94%A8%E7%9F%A5%E8%AF%86-%E6%9D%82%E8%B0%88/">实用知识(杂谈)</a></div><div class="post_share"><div class="social-share" data-image="/img/default_top_img/53.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2022/05/16/%E5%AD%A6%E7%BA%BF%E7%A7%BB%E5%8A%A8%E7%9A%84%E4%B8%A4%E5%B9%B4-%E5%AE%89%E5%8D%93%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E8%BF%9B%E9%98%B6/"><img class="prev-cover" src="/img/default_top_img/31.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">学线移动的两年：安卓从小白到进阶</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ZWN</div><div class="author-info__description">我虽无意逐鹿，却知苍生苦楚</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ZWN2001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ZWN2001" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">关于mklink命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E5%88%B6"><span class="toc-number">1.1.3.</span> <span class="toc-text">限制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">具体操作方法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/26/%E8%AE%A9Onedrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EWindows%EF%BC%89/" title="让Onedrive云盘同步本地任意一个文件夹（适用于Windows）"><img src="/img/default_top_img/53.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="让Onedrive云盘同步本地任意一个文件夹（适用于Windows）"/></a><div class="content"><a class="title" href="/2022/05/26/%E8%AE%A9Onedrive%E4%BA%91%E7%9B%98%E5%90%8C%E6%AD%A5%E6%9C%AC%E5%9C%B0%E4%BB%BB%E6%84%8F%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%88%E9%80%82%E7%94%A8%E4%BA%8EWindows%EF%BC%89/" title="让Onedrive云盘同步本地任意一个文件夹（适用于Windows）">让Onedrive云盘同步本地任意一个文件夹（适用于Windows）</a><time datetime="2022-05-26T13:24:50.000Z" title="发表于 2022-05-26 21:24:50">2022-05-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/16/%E5%AD%A6%E7%BA%BF%E7%A7%BB%E5%8A%A8%E7%9A%84%E4%B8%A4%E5%B9%B4-%E5%AE%89%E5%8D%93%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E8%BF%9B%E9%98%B6/" title="学线移动的两年：安卓从小白到进阶"><img src="/img/default_top_img/31.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学线移动的两年：安卓从小白到进阶"/></a><div class="content"><a class="title" href="/2022/05/16/%E5%AD%A6%E7%BA%BF%E7%A7%BB%E5%8A%A8%E7%9A%84%E4%B8%A4%E5%B9%B4-%E5%AE%89%E5%8D%93%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E8%BF%9B%E9%98%B6/" title="学线移动的两年：安卓从小白到进阶">学线移动的两年：安卓从小白到进阶</a><time datetime="2022-05-16T12:01:58.000Z" title="发表于 2022-05-16 20:01:58">2022-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/15/%E6%89%8B%E6%8E%A7%E9%BC%A0%E6%A0%87/" title="手控鼠标"><img src="/img/default_top_img/28.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="手控鼠标"/></a><div class="content"><a class="title" href="/2022/05/15/%E6%89%8B%E6%8E%A7%E9%BC%A0%E6%A0%87/" title="手控鼠标">手控鼠标</a><time datetime="2022-05-15T05:45:36.000Z" title="发表于 2022-05-15 13:45:36">2022-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/14/os-%E5%AE%9E%E9%AA%8C%E4%B8%83/" title="os-实验七"><img src="/img/default_top_img/29.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="os-实验七"/></a><div class="content"><a class="title" href="/2022/05/14/os-%E5%AE%9E%E9%AA%8C%E4%B8%83/" title="os-实验七">os-实验七</a><time datetime="2022-05-14T06:26:02.000Z" title="发表于 2022-05-14 14:26:02">2022-05-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/11/%E4%BD%BF%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E7%A6%81%E7%94%A8%E9%94%AE%E7%9B%98/" title="使用快捷键禁用键盘"><img src="/img/default_top_img/45.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用快捷键禁用键盘"/></a><div class="content"><a class="title" href="/2022/05/11/%E4%BD%BF%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E7%A6%81%E7%94%A8%E9%94%AE%E7%9B%98/" title="使用快捷键禁用键盘">使用快捷键禁用键盘</a><time datetime="2022-05-11T14:38:21.000Z" title="发表于 2022-05-11 22:38:21">2022-05-11</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/default_top_img/53.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By ZWN</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">喵喵喵？</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7MlJqmD9Ceux2bxiKqPqsMHW-gzGzoHsz',
+      appKey: '3oP9XaednBAwtfMk2q28dwGP',
+      placeholder: 'Please leave your footprints',
+      avatar: 'retro',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label>✨ 网站已更新最新版本 👉</label> <a href="javascript:void(0)" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")}));</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
