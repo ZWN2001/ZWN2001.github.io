@@ -1,0 +1,525 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>正则表达式 | ZWN's blog</title><meta name="keywords" content="正则表达式"><meta name="author" content="ZWN"><meta name="copyright" content="ZWN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="正则表达式 前言 这种学得快忘得也快的小玩意真是让人头疼。 通过使用正则表达式，可以：  测试字符串内的模式。  例如，可以测试输入字符串，以查看字符串内是否出现电话号码模式或信用卡号码模式。这称为数据验证。   替换文本。  可以使用正则表达式来识别文档中的特定文本，完全删除该文本或者用其他文本替换它。   基于模式匹配从字符串中提取子字符串。  可以查找文档内或输入域内特定的文本。    正则">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="https://zwn2001.github.io/2022/07/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:site_name" content="ZWN&#39;s blog">
+<meta property="og:description" content="正则表达式 前言 这种学得快忘得也快的小玩意真是让人头疼。 通过使用正则表达式，可以：  测试字符串内的模式。  例如，可以测试输入字符串，以查看字符串内是否出现电话号码模式或信用卡号码模式。这称为数据验证。   替换文本。  可以使用正则表达式来识别文档中的特定文本，完全删除该文本或者用其他文本替换它。   基于模式匹配从字符串中提取子字符串。  可以查找文档内或输入域内特定的文本。    正则">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zwn2001.github.io/img/default_top_img/50.jpg">
+<meta property="article:published_time" content="2022-07-05T08:18:57.000Z">
+<meta property="article:modified_time" content="2022-07-05T12:01:20.071Z">
+<meta property="article:author" content="ZWN">
+<meta property="article:tag" content="正则表达式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zwn2001.github.io/img/default_top_img/50.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zwn2001.github.io/2022/07/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/pwa/16.png"/><link rel="mask-icon" href="/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: ZWN","link":"链接: ","source":"来源: ZWN's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '正则表达式',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-05 20:01:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">91</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/default_top_img/50.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ZWN's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">正则表达式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-05T08:18:57.000Z" title="发表于 2022-07-05 16:18:57">2022-07-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-05T12:01:20.071Z" title="更新于 2022-07-05 20:01:20">2022-07-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%9E%E7%94%A8%E7%9F%A5%E8%AF%86-%E6%9D%82%E8%B0%88/">实用知识(杂谈)</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="正则表达式"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>正则表达式</h1>
+<h2 id="前言">前言</h2>
+<p>这种学得快忘得也快的小玩意真是让人头疼。</p>
+<p>通过使用正则表达式，可以：</p>
+<ul>
+<li>测试字符串内的模式。
+<ul>
+<li>例如，可以测试输入字符串，以查看字符串内是否出现电话号码模式或信用卡号码模式。这称为数据验证。</li>
+</ul>
+</li>
+<li>替换文本。
+<ul>
+<li>可以使用正则表达式来识别文档中的特定文本，完全删除该文本或者用其他文本替换它。</li>
+</ul>
+</li>
+<li>基于模式匹配从字符串中提取子字符串。
+<ul>
+<li>可以查找文档内或输入域内特定的文本。</li>
+</ul>
+</li>
+</ul>
+<p>正则表达式的使用，可以通过简单的办法来实现强大的功能。下面先给出一个简单的示例：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%5C1.jpg" alt="img"></p>
+<ul>
+<li><strong>^</strong> 为匹配输入字符串的开始位置。</li>
+<li><strong>[0-9]+<strong>匹配多个数字， <strong>[0-9]</strong> 匹配单个数字，</strong>+</strong> 匹配一个或者多个。</li>
+<li><strong>abc<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∗</mo><mo>∗</mo><mtext>匹配字母</mtext><mo>∗</mo><mo>∗</mo><mi>a</mi><mi>b</mi><mi>c</mi><mo>∗</mo><mo>∗</mo><mtext>并以</mtext><mo>∗</mo><mo>∗</mo><mi>a</mi><mi>b</mi><mi>c</mi><mo>∗</mo><mo>∗</mo><mtext>结尾，</mtext><mo>∗</mo><mo>∗</mo></mrow><annotation encoding="application/x-tex">**匹配字母 **abc** 并以 **abc** 结尾，**</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">匹配字母</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">∗</span><span class="mord mathnormal">ab</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">∗</span><span class="mord cjk_fallback">并以</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">∗</span><span class="mord mathnormal">ab</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">∗</span><span class="mord cjk_fallback">结尾，</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord">∗</span></span></span></span></strong> 为匹配输入字符串的结束位置。</li>
+</ul>
+<p>我们在写用户注册表单时，只允许用户名包含字符、数字、下划线和连接字符 <strong>-</strong>，并设置用户名的长度，我们就可以使用以下正则表达式来设定。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="正则表达式\regexp-cn.png" alt="img" style="zoom:80%;" />
+<h2 id="修饰符（标记）">修饰符（标记）</h2>
+<p>标记也称为修饰符，正则表达式的标记用于指定额外的匹配策略。</p>
+<p>标记不写在正则表达式里，标记位于表达式之外，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/你的正则表达式/flags</span><br></pre></td></tr></table></figure>
+<p>下表列出了正则表达式常用的修饰符：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">修饰符</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">i</td>
+<td style="text-align:left">ignore - 不区分大小写</td>
+<td style="text-align:left">将匹配设置为不区分大小写，搜索时不区分大小写: A 和 a 没有区别。</td>
+</tr>
+<tr>
+<td style="text-align:left">g</td>
+<td style="text-align:left">global - 全局匹配</td>
+<td style="text-align:left">查找所有的匹配项。</td>
+</tr>
+<tr>
+<td style="text-align:left">m</td>
+<td style="text-align:left">multi line - 多行匹配</td>
+<td style="text-align:left">使边界字符 <strong>^</strong> 和 <strong>$</strong> 匹配每一行的开头和结尾，记住是多行，而不是整个字符串的开头和结尾。</td>
+</tr>
+<tr>
+<td style="text-align:left">s</td>
+<td style="text-align:left">特殊字符圆点 <strong>.</strong> 中包含换行符 <strong>\n</strong></td>
+<td style="text-align:left">默认情况下的圆点 <strong>.</strong> 是匹配除换行符 <strong>\n</strong> 之外的任何字符，加上 <strong>s</strong> 修饰符之后, <strong>.</strong> 中包含换行符 \n。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="举例">举例</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;Google runoob taobao runoob&quot;; </span><br><span class="line">var n1=str.match(/runoob/);   // 查找第一次匹配项</span><br><span class="line">var n2=str.match(/runoob/g);  // 查找所有匹配项</span><br></pre></td></tr></table></figure>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="正则表达式\2.png" alt="img" style="zoom:53%;" />
+<h2 id="元字符">元字符</h2>
+<p>下表包含了元字符的完整列表以及它们在正则表达式上下文中的行为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left">将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。例如，‘n’ 匹配字符 “n”。‘\n’ 匹配一个换行符。序列 ‘\’ 匹配 “” 而 “(” 则匹配 “(”。</td>
+</tr>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">匹配<strong>输入字符串的开始位置</strong>。如果设置了 RegExp 对象的 Multiline 属性，^ 也匹配 ‘\n’ 或 ‘\r’ 之后的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">$</td>
+<td style="text-align:left">匹配<strong>输入字符串的结束位置</strong>。如果设置了RegExp 对象的 Multiline 属性，$ 也匹配 ‘\n’ 或 ‘\r’ 之前的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left"><strong>匹配前面的子表达式零次或多次</strong>。例如，zo* 能匹配 “z” 以及 “zoo”。* 等价于{0,}。</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left"><strong>匹配前面的子表达式一次或多次</strong>。例如，‘zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left"><strong>匹配前面的子表达式零次或一次</strong>。例如，“do(es)?” 可以匹配 “do” 或 “does” 。? 等价于 {0,1}。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n}</td>
+<td style="text-align:left"><strong>n 是一个非负整数。匹配确定的 n 次</strong>。例如，‘o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n,}</td>
+<td style="text-align:left">n 是一个非负整数。<strong>至少匹配n 次</strong>。例如，‘o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。‘o{1,}’ 等价于 ‘o+’。‘o{0,}’ 则等价于 ‘o*’。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n,m}</td>
+<td style="text-align:left">m 和 n 均为非负整数，其中n &lt;= m。<strong>最少匹配 n 次且最多匹配 m 次</strong>。例如，“o{1,3}” 将匹配 “fooooood” 中的前三个 o。‘o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">当该字符紧跟在任何一个其他限制符 (*, +, ?, {n}, {n,}, {n,m}) 后面时，匹配模式是非贪婪的。<strong>非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串</strong>。例如，对于字符串 “oooo”，‘o+?’ 将匹配单个 “o”，而 ‘o+’ 将匹配所有 ‘o’。</td>
+</tr>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">匹配<strong>除换行符（\n、\r）之外</strong>的任何<strong>单个字符</strong>。要匹配包括 ‘\n’ 在内的任何字符，请使用像&quot;<strong>(.|\n)</strong>&quot;的模式。</td>
+</tr>
+<tr>
+<td style="text-align:left">(pattern)</td>
+<td style="text-align:left">匹配 pattern 并获取这一匹配。所获取的匹配可以从产生的 Matches 集合得到，在VBScript 中使用 SubMatches 集合，在JScript 中则使用 $0…$9 属性。要匹配圆括号字符，请使用 ‘(’ 或 ‘)’。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?:pattern)</td>
+<td style="text-align:left">匹配 pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用 “或” 字符 (|) 来组合一个模式的各个部分是很有用。例如， 'industr(?:y|ies) 就是一个比 ‘industry|industries’ 更简略的表达式。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?=pattern)</td>
+<td style="text-align:left">正向肯定预查（look ahead positive assert），在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“Windows(?=95|98|NT|2000)“能匹配&quot;Windows2000&quot;中的&quot;Windows”，但不能匹配&quot;Windows3.1&quot;中的&quot;Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?!pattern)</td>
+<td style="text-align:left">正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如&quot;Windows(?!95|98|NT|2000)“能匹配&quot;Windows3.1&quot;中的&quot;Windows”，但不能匹配&quot;Windows2000&quot;中的&quot;Windows&quot;。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;=pattern)</td>
+<td style="text-align:left">反向(look behind)肯定预查，与正向肯定预查类似，只是方向相反。例如，“<code>(?&lt;=95|98|NT|2000)Windows</code>&quot;能匹配&quot;<code>2000Windows</code>&quot;中的&quot;<code>Windows</code>”，但不能匹配&quot;<code>3.1Windows</code>&quot;中的&quot;<code>Windows</code>&quot;。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;!pattern)</td>
+<td style="text-align:left">反向否定预查，与正向否定预查类似，只是方向相反。例如&quot;<code>(?&lt;!95|98|NT|2000)Windows</code>&quot;能匹配&quot;<code>3.1Windows</code>&quot;中的&quot;<code>Windows</code>&quot;，但不能匹配&quot;<code>2000Windows</code>&quot;中的&quot;<code>Windows</code>&quot;。</td>
+</tr>
+<tr>
+<td style="text-align:left">x|y</td>
+<td style="text-align:left"><strong>匹配 x 或 y</strong>。例如，‘z|food’ 能匹配 “z” 或 “food”。‘(z|f)ood’ 则匹配 “zood” 或 “food”。</td>
+</tr>
+<tr>
+<td style="text-align:left">[xyz]</td>
+<td style="text-align:left"><strong>字符集合。匹配所包含的任意一个字符</strong>。例如， ‘[abc]’ 可以匹配 “plain” 中的 ‘a’。</td>
+</tr>
+<tr>
+<td style="text-align:left">[^xyz]</td>
+<td style="text-align:left"><strong>负值字符集合。匹配未包含的任意字符</strong>。例如， ‘[^abc]’ 可以匹配 “plain” 中的’p’、‘l’、‘i’、‘n’。</td>
+</tr>
+<tr>
+<td style="text-align:left">[a-z]</td>
+<td style="text-align:left"><strong>字符范围。匹配指定范围内的任意字符</strong>。例如，‘[a-z]’ 可以匹配 ‘a’ 到 ‘z’ 范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">[^a-z]</td>
+<td style="text-align:left">负值字符范围。匹配任何不在指定范围内的任意字符。例如，‘[^a-z]’ 可以匹配任何不在 ‘a’ 到 ‘z’ 范围内的任意字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left"><strong>匹配一个单词边界，也就是指单词和空格间的位置</strong>。例如， ‘er\b’ 可以匹配&quot;never&quot; 中的 ‘er’，但不能匹配 “verb” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td style="text-align:left">\B</td>
+<td style="text-align:left"><strong>匹配非单词边界</strong>。‘er\B’ 能匹配 “verb” 中的 ‘er’，但不能匹配 “never” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td style="text-align:left">\cx</td>
+<td style="text-align:left">匹配由 x 指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\d</td>
+<td style="text-align:left">匹配一个<strong>数字</strong>字符。等价于 [0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\D</td>
+<td style="text-align:left">匹配一个<strong>非数字</strong>字符。等价于 [^0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\f</td>
+<td style="text-align:left">匹配一个换页符。等价于 \x0c 和 \cL。</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">匹配一个<strong>换行符</strong>。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td style="text-align:left">\r</td>
+<td style="text-align:left">匹配一个<strong>回车符</strong>。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td style="text-align:left">\s</td>
+<td style="text-align:left">匹配任何<strong>空白字符</strong>，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\S</td>
+<td style="text-align:left">匹配任何<strong>非空白字符</strong>。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\t</td>
+<td style="text-align:left">匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td style="text-align:left">\v</td>
+<td style="text-align:left">匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+<tr>
+<td style="text-align:left">\w</td>
+<td style="text-align:left">匹配<strong>字母、数字、下划线</strong>。等价于’[A-Za-z0-9_]'。</td>
+</tr>
+<tr>
+<td style="text-align:left">\W</td>
+<td style="text-align:left">匹配非字母、数字、下划线。等价于 [^A-Za-z0-9_]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\xn</td>
+<td style="text-align:left"><strong>匹配 n，其中 n 为十六进制转义值</strong>。十六进制转义值必须为确定的两个数字长。例如，‘\x41’ 匹配 “A”。‘\x041’ 则等价于 ‘\x04’ &amp; “1”。正则表达式中可以使用 ASCII 编码。</td>
+</tr>
+<tr>
+<td style="text-align:left">\num</td>
+<td style="text-align:left">匹配 num，其中 num 是一个正整数。对所获取的匹配的引用。例如，‘(.)\1’ 匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">标识一个八进制转义值或一个向后引用。如果 \n 之前至少 n 个获取的子表达式，则 n 为向后引用。否则，如果 n 为八进制数字 (0-7)，则 n 为一个八进制转义值。</td>
+</tr>
+<tr>
+<td style="text-align:left">\nm</td>
+<td style="text-align:left">标识一个八进制转义值或一个向后引用。如果 \nm 之前至少有 nm 个获得子表达式，则 nm 为向后引用。如果 \nm 之前至少有 n 个获取，则 n 为一个后跟文字 m 的向后引用。如果前面的条件都不满足，若 n 和 m 均为八进制数字 (0-7)，则 \nm 将匹配八进制转义值 nm。</td>
+</tr>
+<tr>
+<td style="text-align:left">\nml</td>
+<td style="text-align:left">如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。</td>
+</tr>
+<tr>
+<td style="text-align:left">\un</td>
+<td style="text-align:left">匹配 n，其中 n 是一个用四个十六进制数字表示的 Unicode 字符。例如， \u00A9 匹配版权符号 (?)。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用匹配规则">常用匹配规则</h2>
+<h3 id="基本模式匹配">基本模式匹配</h3>
+<p>一切从最基本的开始。模式，是正则表达式最基本的元素，它们是一组描述字符串特征的字符。模式可以很简单，由普通的字符串组成，也可以非常复杂，往往用特殊的字符表示一个范围内的字符、重复出现，或表示上下文。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^once</span><br></pre></td></tr></table></figure>
+<p>这个模式包含一个特殊的字符 <strong>^</strong>，表示该模式只匹配那些以 <strong>once</strong> 开头的字符串。例如该模式与字符串 <strong>“once upon a time”</strong> 匹配，与 <strong>“There once was a man from NewYork”</strong> 不匹配。正如如 <strong>^</strong> 符号表示开头一样，<strong>$</strong> 符号用来匹配那些以给定模式结尾的字符串。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bucket$</span><br></pre></td></tr></table></figure>
+<p>这个模式与 <strong>“Who kept all of this cash in a bucket”</strong> 匹配，与 <strong>“buckets”</strong> 不匹配。字符 <strong>^</strong> 和 <strong>$</strong> 同时使用时，表示精确匹配（字符串与模式一样）。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^bucket$</span><br></pre></td></tr></table></figure>
+<p>只匹配字符串 <strong>“bucket”</strong>。如果一个模式不包括 <strong>^</strong> 和 <strong>$</strong>，那么它与任何包含该模式的字符串匹配。例如模式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">once</span><br></pre></td></tr></table></figure>
+<p>与字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">There once was a man from NewYork</span><br><span class="line">Who kept all of his cash in a bucket.</span><br></pre></td></tr></table></figure>
+<p>是匹配的。</p>
+<p>在该模式中的字母 <strong>(o-n-c-e)</strong> 是字面的字符，也就是说，他们表示该字母本身，数字也是一样的。其他一些稍微复杂的字符，如标点符号和白字符（空格、制表符等），要用到转义序列。所有的转义序列都用反斜杠 *<em>*</em> 打头。制表符的转义序列是 <strong>\t</strong>。所以如果我们要检测一个字符串是否以制表符开头，可以用这个模式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\t </span><br></pre></td></tr></table></figure>
+<p>类似的，用 <strong>\n</strong> 表示**“新行”<strong>，</strong>\r** 表示回车。其他的特殊符号，可以用在前面加上反斜杠，如反斜杠本身用 <strong>\</strong> 表示，句号 <strong>.</strong> 用 <strong>.</strong> 表示，以此类推。</p>
+<h3 id="字符簇">字符簇</h3>
+<p>在 INTERNET 的程序中，正则表达式通常用来验证用户的输入。当用户提交一个 FORM 以后，要判断输入的电话号码、地址、EMAIL 地址、信用卡号码等是否有效，用普通的基于字面的字符是不够的。</p>
+<p>所以要用一种更自由的描述我们要的模式的办法，它就是字符簇。要建立一个表示所有元音字符的字符簇，就把所有的元音字符放在一个方括号里：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[AaEeIiOoUu]</span><br></pre></td></tr></table></figure>
+<p>这个模式与任何元音字符匹配，但只能表示一个字符。用连字号可以表示一个字符的范围，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[a-z] // 匹配所有的小写字母 </span><br><span class="line">[A-Z] // 匹配所有的大写字母 </span><br><span class="line">[a-zA-Z] // 匹配所有的字母 </span><br><span class="line">[0-9] // 匹配所有的数字 </span><br><span class="line">[0-9\.\-] // 匹配所有的数字，句号和减号 </span><br><span class="line">[ \f\r\t\n] // 匹配所有的白字符</span><br></pre></td></tr></table></figure>
+<p>同样的，这些也只表示一个字符，这是一个非常重要的。如果要匹配一个由一个小写字母和一位数字组成的字符串，比如 “z2”、“t6” 或 “g7”，但不是 “ab2”、“r2d3” 或 “b52” 的话，用这个模式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[a-z][0-9]$</span><br></pre></td></tr></table></figure>
+<p>尽管 <strong>[a-z]</strong> 代表 26 个字母的范围，但在这里它只能与第一个字符是小写字母的字符串匹配。</p>
+<p>前面曾经提到^表示字符串的开头，但它还有另外一个含义。当在一组方括号里使用 <strong>^</strong> 时，它表示&quot;<strong>非</strong>&quot;或&quot;<strong>排除</strong>&quot;的意思，常常用来剔除某个字符。还用前面的例子，我们要求第一个字符不能是数字：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[^0-9][0-9]$</span><br></pre></td></tr></table></figure>
+<p>这个模式与 “&amp;5”、“g7&quot;及”-2&quot; 是匹配的，但与 “12”、“66” 是不匹配的。下面是几个排除特定字符的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[^a-z] //除了小写字母以外的所有字符 </span><br><span class="line">[^\\\/\^] //除了(\)(/)(^)之外的所有字符 </span><br><span class="line">[^\&quot;\&#x27;] //除了双引号(&quot;)和单引号(&#x27;)之外的所有字符</span><br></pre></td></tr></table></figure>
+<p>特殊字符 <strong>.</strong>(点，句号)在正则表达式中用来表示除了&quot;新行&quot;之外的所有字符。所以模式 <strong>^.5$</strong> 与任何两个字符的、以数字5结尾和以其他非&quot;新行&quot;字符开头的字符串匹配。模式 <strong>.</strong> 可以匹配任何字符串，<strong>换行符（\n、\r）除外</strong>。</p>
+<h3 id="确定重复出现">确定重复出现</h3>
+<p>到现在为止，你已经知道如何去匹配一个字母或数字，但更多的情况下，可能要匹配一个单词或一组数字。一个单词有若干个字母组成，一组数字有若干个单数组成。跟在字符或字符簇后面的花括号({})用来确定前面的内容的重复出现的次数。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字符簇</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">^[a-zA-Z_]$</td>
+<td style="text-align:left">所有的字母和下划线</td>
+</tr>
+<tr>
+<td style="text-align:left">^[[:alpha:]]{3}$</td>
+<td style="text-align:left">所有的3个字母的单词</td>
+</tr>
+<tr>
+<td style="text-align:left">^a$</td>
+<td style="text-align:left">字母a</td>
+</tr>
+<tr>
+<td style="text-align:left">^a{4}$</td>
+<td style="text-align:left">aaaa</td>
+</tr>
+<tr>
+<td style="text-align:left">^a{2,4}$</td>
+<td style="text-align:left">aa,aaa或aaaa</td>
+</tr>
+<tr>
+<td style="text-align:left">^a{1,3}$</td>
+<td style="text-align:left">a,aa或aaa</td>
+</tr>
+<tr>
+<td style="text-align:left">^a{2,}$</td>
+<td style="text-align:left">包含多于两个a的字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">^a{2,}</td>
+<td style="text-align:left">如：aardvark和aaab，但apple不行</td>
+</tr>
+<tr>
+<td style="text-align:left">a{2,}</td>
+<td style="text-align:left">如：baad和aaa，但Nantucket不行</td>
+</tr>
+<tr>
+<td style="text-align:left">\t{2}</td>
+<td style="text-align:left">两个制表符</td>
+</tr>
+<tr>
+<td style="text-align:left">.{2}</td>
+<td style="text-align:left">所有的两个字符</td>
+</tr>
+</tbody>
+</table>
+<p>这些例子描述了花括号的三种不同的用法。一个数字 <strong>{x}</strong> 的意思是<strong>前面的字符或字符簇只出现x次</strong> ；一个数字加逗号 <strong>{x,}</strong> 的意思是<strong>前面的内容出现x或更多的次数</strong> ；两个数字用逗号分隔的数字 <strong>{x,y}</strong> 表示 <strong>前面的内容至少出现x次，但不超过y次</strong>。我们可以把模式扩展到更多的单词或数字：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">^[a-zA-Z0-9_]&#123;1,&#125;$      // 所有包含一个以上的字母、数字或下划线的字符串 </span><br><span class="line">^[1-9][0-9]&#123;0,&#125;$        // 所有的正整数 </span><br><span class="line">^\-&#123;0,1&#125;[0-9]&#123;1,&#125;$      // 所有的整数 </span><br><span class="line">^[-]?[0-9]+\.?[0-9]+$   // 所有的浮点数</span><br></pre></td></tr></table></figure>
+<p>最后一个例子不太好理解，是吗？这么看吧：以一个可选的负号 (<strong>[-]?</strong>) 开头 (<strong>^</strong>)、跟着1个或更多的数字(<strong>[0-9]+</strong>)、和一个小数点(<strong>.</strong>)再跟上1个或多个数字**([0-9]+<strong>)，并且后面没有其他任何东西(</strong>$**)。下面你将知道能够使用的更为简单的方法。</p>
+<p>特殊字符 <strong>?</strong> 与 <strong>{0,1}</strong> 是相等的，它们都代表着： <strong>0个或1个前面的内容</strong> 或 <strong>前面的内容是可选的</strong> 。所以刚才的例子可以简化为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\-?[0-9]&#123;1,&#125;\.?[0-9]&#123;1,&#125;$</span><br></pre></td></tr></table></figure>
+<p>特殊字符 ***** 与 <strong>{0,}</strong> 是相等的，它们都代表着 <strong>0 个或多个前面的内容</strong> 。最后，字符 <strong>+</strong> 与 <strong>{1,}</strong> 是相等的，表示 <strong>1 个或多个前面的内容</strong> ，所以上面的4个例子可以写成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">^[a-zA-Z0-9_]+$      // 所有包含一个以上的字母、数字或下划线的字符串 </span><br><span class="line">^[1-9][0-9]*$        // 所有的正整数 </span><br><span class="line">^\-?[0-9]+$          // 所有的整数 </span><br><span class="line">^[-]?[0-9]+(\.[0-9]+)?$ // 所有的浮点数</span><br></pre></td></tr></table></figure>
+<p>当然这并不能从技术上降低正则表达式的复杂性，但可以使它们更容易阅读。</p>
+<h2 id="参考">参考</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/regexp/regexp-intro.html">https://www.runoob.com/regexp/regexp-intro.html</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://ZWN2001.github.io">ZWN</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zwn2001.github.io/2022/07/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">https://zwn2001.github.io/2022/07/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ZWN2001.github.io" target="_blank">ZWN's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></div><div class="post_share"><div class="social-share" data-image="/img/default_top_img/50.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/05/Python%E7%88%AC%E8%99%AB%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%B0%8F%E9%BB%91%E5%B1%8B/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_top_img/36.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python爬虫从入门到小黑屋</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/06/git%E5%B0%8F%E6%8A%84/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/add1/18.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Git 的奇技淫巧</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ZWN</div><div class="author-info__description">我虽无意逐鹿，却知苍生苦楚</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">91</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ZWN2001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ZWN2001" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%88%E6%A0%87%E8%AE%B0%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">修饰符（标记）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-number">1.3.</span> <span class="toc-text">元字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99"><span class="toc-number">1.4.</span> <span class="toc-text">常用匹配规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D"><span class="toc-number">1.4.1.</span> <span class="toc-text">基本模式匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%B0%87"><span class="toc-number">1.4.2.</span> <span class="toc-text">字符簇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E9%87%8D%E5%A4%8D%E5%87%BA%E7%8E%B0"><span class="toc-number">1.4.3.</span> <span class="toc-text">确定重复出现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">1.5.</span> <span class="toc-text">参考</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/06/cpp%E5%B0%8F%E6%8A%84/" title="cpp小抄"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_top_img/13.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cpp小抄"/></a><div class="content"><a class="title" href="/2022/07/06/cpp%E5%B0%8F%E6%8A%84/" title="cpp小抄">cpp小抄</a><time datetime="2022-07-06T08:18:57.000Z" title="发表于 2022-07-06 16:18:57">2022-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/06/Python%E5%B0%8F%E6%8A%84/" title="Python小抄"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_top_img/38.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python小抄"/></a><div class="content"><a class="title" href="/2022/07/06/Python%E5%B0%8F%E6%8A%84/" title="Python小抄">Python小抄</a><time datetime="2022-07-06T08:18:57.000Z" title="发表于 2022-07-06 16:18:57">2022-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/06/git%E5%B0%8F%E6%8A%84/" title="Git 的奇技淫巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/add1/18.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git 的奇技淫巧"/></a><div class="content"><a class="title" href="/2022/07/06/git%E5%B0%8F%E6%8A%84/" title="Git 的奇技淫巧">Git 的奇技淫巧</a><time datetime="2022-07-06T07:24:21.000Z" title="发表于 2022-07-06 15:24:21">2022-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_top_img/50.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="正则表达式"/></a><div class="content"><a class="title" href="/2022/07/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">正则表达式</a><time datetime="2022-07-05T08:18:57.000Z" title="发表于 2022-07-05 16:18:57">2022-07-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/05/Python%E7%88%AC%E8%99%AB%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%B0%8F%E9%BB%91%E5%B1%8B/" title="Python爬虫从入门到小黑屋"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_top_img/36.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python爬虫从入门到小黑屋"/></a><div class="content"><a class="title" href="/2022/07/05/Python%E7%88%AC%E8%99%AB%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%B0%8F%E9%BB%91%E5%B1%8B/" title="Python爬虫从入门到小黑屋">Python爬虫从入门到小黑屋</a><time datetime="2022-07-05T07:24:21.000Z" title="发表于 2022-07-05 15:24:21">2022-07-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/default_top_img/50.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By ZWN</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">喵喵喵？</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7MlJqmD9Ceux2bxiKqPqsMHW-gzGzoHsz',
+      appKey: '3oP9XaednBAwtfMk2q28dwGP',
+      avatar: 'retro',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label>✨ 网站已更新最新版本 👉</label> <a href="javascript:void(0)" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")}));</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
