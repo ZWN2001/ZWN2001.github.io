@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Python爬12306余票 | ZWN's blog</title><meta name="keywords" content="Python"><meta name="author" content="ZWN"><meta name="copyright" content="ZWN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python爬12306余票 项目地址：https:&#x2F;&#x2F;github.com&#x2F;ZWN2001&#x2F;data_spider_12306 数据库课设使用的爬虫 半成品，需要根据todo自己改改 main.py查的是学生票 main2.py查的是成人票 爬虫教程在 here 一些问题的解答 为什么要分成人与学生 如果你进行请求就会发现默认（成人票）只能请求到近几个月的数据。 而学生票则可以请求到更多。 成人">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬12306余票">
+<meta property="og:url" content="https://zwn2001.github.io/2022/07/11/Python%E7%88%AC12306%E4%BD%99%E7%A5%A8/index.html">
+<meta property="og:site_name" content="ZWN&#39;s blog">
+<meta property="og:description" content="Python爬12306余票 项目地址：https:&#x2F;&#x2F;github.com&#x2F;ZWN2001&#x2F;data_spider_12306 数据库课设使用的爬虫 半成品，需要根据todo自己改改 main.py查的是学生票 main2.py查的是成人票 爬虫教程在 here 一些问题的解答 为什么要分成人与学生 如果你进行请求就会发现默认（成人票）只能请求到近几个月的数据。 而学生票则可以请求到更多。 成人">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zwn2001.github.io/img/cover1/7.jpg">
+<meta property="article:published_time" content="2022-07-11T03:24:04.000Z">
+<meta property="article:modified_time" content="2022-07-11T04:14:16.865Z">
+<meta property="article:author" content="ZWN">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zwn2001.github.io/img/cover1/7.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zwn2001.github.io/2022/07/11/Python%E7%88%AC12306%E4%BD%99%E7%A5%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/pwa/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/pwa/16.png"/><link rel="mask-icon" href="/pwa/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: ZWN","link":"链接: ","source":"来源: ZWN's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python爬12306余票',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-11 12:14:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">92</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover1/7.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ZWN's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Python爬12306余票</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-11T03:24:04.000Z" title="发表于 2022-07-11 11:24:04">2022-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-11T04:14:16.865Z" title="更新于 2022-07-11 12:14:16">2022-07-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%9E%E7%94%A8%E7%9F%A5%E8%AF%86-%E6%9D%82%E8%B0%88/">实用知识(杂谈)</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">353</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Python爬12306余票"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Python爬12306余票</h1>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/ZWN2001/data_spider_12306">https://github.com/ZWN2001/data_spider_12306</a></p>
+<p>数据库课设使用的爬虫</p>
+<p>半成品，需要根据<code>todo</code>自己改改</p>
+<p><code>main.py</code>查的是学生票</p>
+<p><code>main2.py</code>查的是成人票</p>
+<p>爬虫教程在 <a target="_blank" rel="noopener" href="https://zwn-2001-github-io.vercel.app/2022/07/05/Python%E7%88%AC%E8%99%AB%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%B0%8F%E9%BB%91%E5%B1%8B/">here</a></p>
+<h2 id="一些问题的解答">一些问题的解答</h2>
+<h3 id="为什么要分成人与学生">为什么要分成人与学生</h3>
+<p>如果你进行请求就会发现默认（成人票）只能请求到近几个月的数据。</p>
+<p>而学生票则可以请求到更多。</p>
+<h3 id="成人与学生爬虫的区别">成人与学生爬虫的区别</h3>
+<p>区别主要在请求的<code>url</code>与使用的<code>cookie</code>上。</p>
+<p><code>url</code>会使用<code>purpose_codes</code>参数进行区分。</p>
+<p><code>cookie</code>上，学生票要比成人票的<code>cookie</code>严格很多，无法直接通过<code>selenium</code>获取，只能手动填写、更新。</p>
+<p>成人票使用了<code>selenium</code>的无头浏览器，默认使用了谷歌浏览器。</p>
+<h3 id="cookie的结构"><code>cookie</code>的结构</h3>
+<p>两种票的<code>cookie</code>都是由两部分组成的，一部分是固定的<code>cookie</code>数据，通过多次相应头的<code>set_Cookie</code>设置的，从浏览器中可以获取，学生票<code>cookie</code>还会对其中的一些属性进行修改，并且会添加加密过的<code>fo</code>属性。</p>
+<p>另一部分是请求的行程信息，其中起点与终点的值为<code>站名,站编码</code>的形式并用<code>escape</code>编码，这一点在代码中有清晰的体现。</p>
+<h3 id="其他可能存疑的技术点">其他可能存疑的技术点</h3>
+<p>协程、<code>aiohttp</code>、<code>asyncio</code>、<code>request</code>，在教程里都有写</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://ZWN2001.github.io">ZWN</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zwn2001.github.io/2022/07/11/Python%E7%88%AC12306%E4%BD%99%E7%A5%A8/">https://zwn2001.github.io/2022/07/11/Python%E7%88%AC12306%E4%BD%99%E7%A5%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ZWN2001.github.io" target="_blank">ZWN's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a></div><div class="post_share"><div class="social-share" data-image="/img/cover1/7.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2022/07/06/Python%E5%B0%8F%E6%8A%84/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover2/9-min.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python小抄</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/07/05/Python%E7%88%AC%E8%99%AB%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%B0%8F%E9%BB%91%E5%B1%8B/" title="Python爬虫从入门到小黑屋"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover2/4-min.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-05</div><div class="title">Python爬虫从入门到小黑屋</div></div></a></div><div><a href="/2022/07/06/Python%E5%B0%8F%E6%8A%84/" title="Python小抄"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover2/9-min.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-06</div><div class="title">Python小抄</div></div></a></div><div><a href="/2022/01/13/advanced-Python/" title="Python进阶语法记录-OOP、IO、网络"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover2/12-min.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-13</div><div class="title">Python进阶语法记录-OOP、IO、网络</div></div></a></div><div><a href="/2022/01/11/basic-Python/" title="Python基础语法记录"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover3/3-min.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-11</div><div class="title">Python基础语法记录</div></div></a></div><div><a href="/2022/02/26/opencv-basic/" title="opencv_basic"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover2/13-min.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-26</div><div class="title">opencv_basic</div></div></a></div><div><a href="/2022/05/15/%E6%89%8B%E6%8E%A7%E9%BC%A0%E6%A0%87/" title="手控鼠标"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover3/2-min.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-15</div><div class="title">手控鼠标</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ZWN</div><div class="author-info__description">我虽无意逐鹿，却知苍生苦楚</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">92</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ZWN2001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ZWN2001" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">建议使用无痕模式以更快地得到更新，或者访问新站https://zwn-2001-github-io.vercel.app/而非github page,github page将在九月停止运营</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Python爬12306余票</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E7%AD%94"><span class="toc-number">1.1.</span> <span class="toc-text">一些问题的解答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%86%E6%88%90%E4%BA%BA%E4%B8%8E%E5%AD%A6%E7%94%9F"><span class="toc-number">1.1.1.</span> <span class="toc-text">为什么要分成人与学生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E4%BA%BA%E4%B8%8E%E5%AD%A6%E7%94%9F%E7%88%AC%E8%99%AB%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.2.</span> <span class="toc-text">成人与学生爬虫的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.3.</span> <span class="toc-text">cookie的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8F%AF%E8%83%BD%E5%AD%98%E7%96%91%E7%9A%84%E6%8A%80%E6%9C%AF%E7%82%B9"><span class="toc-number">1.1.4.</span> <span class="toc-text">其他可能存疑的技术点</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/Python%E7%88%AC12306%E4%BD%99%E7%A5%A8/" title="Python爬12306余票"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover1/7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python爬12306余票"/></a><div class="content"><a class="title" href="/2022/07/11/Python%E7%88%AC12306%E4%BD%99%E7%A5%A8/" title="Python爬12306余票">Python爬12306余票</a><time datetime="2022-07-11T03:24:04.000Z" title="发表于 2022-07-11 11:24:04">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/06/Python%E5%B0%8F%E6%8A%84/" title="Python小抄"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover2/9-min.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python小抄"/></a><div class="content"><a class="title" href="/2022/07/06/Python%E5%B0%8F%E6%8A%84/" title="Python小抄">Python小抄</a><time datetime="2022-07-06T08:18:57.000Z" title="发表于 2022-07-06 16:18:57">2022-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/06/cpp%E5%B0%8F%E6%8A%84/" title="cpp小抄"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover1/32.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cpp小抄"/></a><div class="content"><a class="title" href="/2022/07/06/cpp%E5%B0%8F%E6%8A%84/" title="cpp小抄">cpp小抄</a><time datetime="2022-07-06T08:18:57.000Z" title="发表于 2022-07-06 16:18:57">2022-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/06/git%E5%B0%8F%E6%8A%84/" title="Git 的奇技淫巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover3/11-min.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git 的奇技淫巧"/></a><div class="content"><a class="title" href="/2022/07/06/git%E5%B0%8F%E6%8A%84/" title="Git 的奇技淫巧">Git 的奇技淫巧</a><time datetime="2022-07-06T07:24:21.000Z" title="发表于 2022-07-06 15:24:21">2022-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover3/1-min.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="正则表达式"/></a><div class="content"><a class="title" href="/2022/07/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">正则表达式</a><time datetime="2022-07-05T08:18:57.000Z" title="发表于 2022-07-05 16:18:57">2022-07-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/cover1/7.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By ZWN</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">喵喵喵？</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7MlJqmD9Ceux2bxiKqPqsMHW-gzGzoHsz',
+      appKey: '3oP9XaednBAwtfMk2q28dwGP',
+      avatar: 'retro',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label>✨ 网站已更新最新版本 👉</label> <a href="javascript:void(0)" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")}));</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
