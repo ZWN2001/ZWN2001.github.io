@@ -1,0 +1,34 @@
+
+/* 头图透明 */
+#page-header{
+  background: transparent!important;
+}
+
+/* 页脚样式 */
+#footer {
+  background: transparent !important;   /* 页脚设置为透明 */
+}
+
+/* 页脚字体颜色 */ 
+#footer-wrap {
+  position: relative;
+  color: #ffffff;                     /* 页脚字体颜色设置为灰色 */              
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+#page-header.post-bg:before {
+  background-color: transparent!important;
+}
+
+
+ */
+/*夜间模式伪类遮罩层透明*/
+[data-theme="dark"]
+  #footer::before{
+      background: transparent!important;
+    }
+[data-theme="dark"]
+  #page-header::before{
+    background: transparent!important;
+    }
