@@ -1,12 +1,12 @@
 
 /* 头图透明 */
-#page-header{
+#page-header:before{
   background: transparent!important;
 }
 
 /* 页脚样式 */
-#footer {
-  background: transparent !important;   /* 页脚设置为透明 */
+#footer:before{
+  background-color: transparent !important;   /* 页脚设置为透明 */
 }
 
 /* 页脚字体颜色 */ 
