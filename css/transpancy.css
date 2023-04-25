@@ -1,6 +1,12 @@
 
 /* 头图透明 */
 #page-header:before{
+  background-color: transparent!important;
+}
+
+
+/* 头图透明 */
+#page-header{
   background: transparent!important;
 }
 
