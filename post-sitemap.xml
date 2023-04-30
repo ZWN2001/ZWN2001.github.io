@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://ZWN2001.github.io/2022/06/09/%E4%B8%80%E4%BA%9B%E9%9A%8F%E6%83%B3/</loc>
+        <lastmod>2023-04-27T02:20:13.327Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://ZWN2001.github.io/2023/04/25/Butterfly%E4%B8%80%E5%9B%BE%E6%B5%81%E8%B8%A9%E5%9D%91/</loc>
         <lastmod>2023-04-25T02:58:49.628Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -83,14 +91,6 @@
     <url>
         <loc>https://ZWN2001.github.io/2022/06/23/database-system-concepts-3/</loc>
         <lastmod>2023-03-31T09:31:56.271Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ZWN2001.github.io/2022/06/09/%E4%B8%80%E4%BA%9B%E9%9A%8F%E6%83%B3/</loc>
-        <lastmod>2023-03-26T02:13:35.595Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -251,14 +251,6 @@
     <url>
         <loc>https://ZWN2001.github.io/2022/12/06/How-to-use-gitbook/</loc>
         <lastmod>2022-12-07T00:31:59.058Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ZWN2001.github.io/2022/10/29/%E5%AE%89%E5%8D%93%E4%BB%8E%E8%BF%9B%E9%98%B6%E5%88%B0%E6%8E%98%E5%A2%93/</loc>
-        <lastmod>2022-12-06T11:53:21.185Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
