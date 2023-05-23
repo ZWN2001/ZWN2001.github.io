@@ -1,0 +1,70 @@
+#todolist {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .list_item {
+    display: inline-block;
+    width: calc(33.333% - .5rem);
+    background: #ffe3dd;
+    border-radius: 12px;
+    border: var(--style-border-always);
+    box-shadow: var(--icat-shadow-border);
+    padding: 10px 1rem 1.2rem;
+    border: 2px dashed #f7a796;
+    --todo-border: 1px solid #f7a796;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  .list_item h3 {
+    margin: 0;
+    color: #333;
+    border-bottom: var(--todo-border);
+  }
+  .list_item ul {
+    font-size: 17px;
+    padding: 0 !important;
+    margin: 0;
+  }
+  .list_item li{
+    margin: 0 !important;
+    color: #333;
+    border-bottom: var(--todo-border);
+  }
+  .list_item li::marker {
+  content: none;
+  }
+  li.achieve {
+    opacity: .8;
+    text-decoration: line-through;
+  }
+  .bottom {
+    line-height: 1.5;
+    text-align: right;
+  }
+  .bottom p {
+    margin: 0 !important;
+  }
+  .bottom a {
+    font-weight: 700;
+    color: var(--font-color) !important;
+  }
+  [data-theme="dark"] .list_item {
+    border: 2px solid var(--icat-card-border) !important;
+  }
+  @media screen and (max-width: 900px) {
+    div#todolist {
+      margin: 1rem 5px 0;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .list_item{
+      width: 100%;
+    }
+    .bottom {
+      text-align: center;
+    }
+  }
+  
+  /* Memos清单页样式 */
+  
