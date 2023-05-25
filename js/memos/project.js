@@ -1,6 +1,6 @@
 todolist();
 function todolist() {
-    fetch('https://memos.itisn.cyou//api/memo?creatorId=64&tag=清单').then(res => res.json()).then(data => { // 注意替换链接和ID
+    fetch('https://memos.itisn.cyou/api/memo?creatorId=64&tag=清单').then(res => res.json()).then(data => { // 注意替换链接和ID
         // 获取并处理数据
         data = data.data
         let box = document.getElementById('todolist')
