@@ -166,7 +166,7 @@
     })(window)</script><link rel="stylesheet" href="/css/transpancy.css"><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/css/loadimg.css"><link rel="stylesheet" href="/css/project.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" src="/img/favicon.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" src="/img/favicon.png"/><div class="loading-image-dot"></div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
 loadingPercentage.style.color = "black";
 let loadingPercentageTimer = setInterval(function() {
   var progressBar = document.querySelector(".pace-progress");
@@ -174,7 +174,7 @@ let loadingPercentageTimer = setInterval(function() {
   var currentValue = progressBar.getAttribute("data-progress-text");
   if (currentValue !== loadingPercentage.textContent) {
     loadingPercentage.textContent = currentValue;
-    if (currentValue === "100%") {
+    if (currentValue === "60%") {
       clearInterval(loadingPercentageTimer);
     }
   }
