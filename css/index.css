@@ -7132,7 +7132,7 @@ blockquote.pullquote.right {
   
   .shapes {
     position: relative;
-    height: 315px;
+    height: 370px;
     width: 100%;
     background: #2128bd;
     overflow: hidden;
@@ -7172,7 +7172,7 @@ blockquote.pullquote.right {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 315px;
+    height: 370px;
     width: 100%;
     background: #fff;
     mix-blend-mode: screen;
@@ -7185,14 +7185,14 @@ blockquote.pullquote.right {
   }
   
   .hello-about h1 {
-    font-size: 200px;
+    /* font-size: 130px; */
     color: #000;
     margin: 0;
     text-align: center;
     font: inherit;
     vertical-align: baseline;
     line-height: 1;
-    font-size: calc((0.0989119683 * 100vw + (58.5558852621px)));
+    font-size: calc((0.0989119683 * 100vw + (28.5558852621px)));
     width: 100%;
     height: 100%;
     display: flex;
@@ -7201,7 +7201,7 @@ blockquote.pullquote.right {
   }
   @media (min-width: 419px) {
     .hello-about h1 {
-      font-size: calc((0.0989119683 * 100vw + (58.5558852621px)));
+      font-size: calc((0.0989119683 * 100vw + (28.5558852621px)));
     }
   }
   
