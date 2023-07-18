@@ -1362,6 +1362,7 @@ canvas:not(#ribbon-canvas),
   --headline-presudo: #a0a0a0;
   --scrollbar-color: #49b1f5;
   --default-bg-color: #49b1f5;
+  --HiPeach-background: #fff;
 }
 body {
   position: relative;
@@ -7547,6 +7548,10 @@ blockquote.pullquote.right {
 @media screen and (max-width: 900px){
     .aside-content{
         max-width:none!important;
+    }
+    .recent-posts{
+        background-color: white;
+        background: white;
     }
 }
 
