@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "cn.sduonline.isdu",
+    "sha256_cert_fingerprints":
+    ["93:EB:7B:FF:3E:91:76:4B:88:50:F7:E9:60:00:55:6B:5D:5F:91:83:DC:E0:B8:54:1E:71:BB:F3:10:A2:34:6B"]
+  }
+}]
