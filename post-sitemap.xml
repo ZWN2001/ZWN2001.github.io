@@ -9,8 +9,48 @@
 
 
     <url>
+        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2024-01-10T10:59:59.512Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2024-01-10T10:59:21.543Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</loc>
+        <lastmod>2024-01-10T10:57:32.953Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN/</loc>
+        <lastmod>2024-01-10T10:45:41.786Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-SVM/</loc>
+        <lastmod>2024-01-10T10:42:55.566Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://zwn2001.space/posts/%E6%AF%95%E8%AE%BE%E4%BB%8E%E8%B0%83%E7%A0%94%E5%88%B0%E5%AE%8C%E5%B7%A5/</loc>
-        <lastmod>2024-01-06T07:29:16.255Z</lastmod>
+        <lastmod>2024-01-09T10:30:56.253Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -19,14 +59,6 @@
     <url>
         <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/</loc>
         <lastmod>2024-01-05T12:06:27.354Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-SVM/</loc>
-        <lastmod>2023-09-06T07:29:55.956Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -257,14 +289,6 @@
     </url>
 
     <url>
-        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2023-08-27T12:12:18.938Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E8%81%9A%E7%B1%BB/</loc>
         <lastmod>2023-08-27T12:12:18.937Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -275,14 +299,6 @@
     <url>
         <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BB%AA%E8%AE%BA/</loc>
         <lastmod>2023-08-27T12:12:18.936Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</loc>
-        <lastmod>2023-08-27T12:12:18.935Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -321,14 +337,6 @@
     </url>
 
     <url>
-        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2023-08-27T12:12:18.930Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/</loc>
         <lastmod>2023-08-27T12:12:18.929Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -347,14 +355,6 @@
     <url>
         <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E4%BB%B7%E6%95%8F%E6%84%9F%E5%AD%A6%E4%B9%A0/</loc>
         <lastmod>2023-08-27T12:12:18.926Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zwn2001.space/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-KNN/</loc>
-        <lastmod>2023-08-27T12:12:18.925Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
