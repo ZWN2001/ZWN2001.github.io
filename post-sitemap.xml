@@ -10,7 +10,15 @@
 
     <url>
         <loc>https://zwn2001.space/posts/%E8%AF%BBpaper3-Katana-Dual-Slicing-Based-Context-for-Learning-Bug-Fixes/</loc>
-        <lastmod>2024-08-12T12:46:13.060Z</lastmod>
+        <lastmod>2024-08-15T03:23:37.536Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zwn2001.space/posts/cs224w-%E5%9B%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A01/</loc>
+        <lastmod>2024-08-14T04:19:24.078Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
