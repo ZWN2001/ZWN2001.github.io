@@ -10,7 +10,15 @@
 
     <url>
         <loc>https://zwn2001.space/posts/%E8%AF%BBpaper4-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%85%A5%E6%89%8B%E4%B8%8E%E8%AE%BA%E6%96%87%E9%9B%86/</loc>
-        <lastmod>2024-08-23T00:22:28.788Z</lastmod>
+        <lastmod>2024-08-23T02:12:29.072Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zwn2001.space/posts/cs224w-%E5%9B%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A01/</loc>
+        <lastmod>2024-08-23T01:57:44.179Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -27,14 +35,6 @@
     <url>
         <loc>https://zwn2001.space/posts/%E8%AF%BBpaper3-Katana-Dual-Slicing-Based-Context-for-Learning-Bug-Fixes/</loc>
         <lastmod>2024-08-16T12:37:44.805Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zwn2001.space/posts/cs224w-%E5%9B%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A01/</loc>
-        <lastmod>2024-08-15T13:51:06.766Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
