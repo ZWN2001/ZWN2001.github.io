@@ -9,8 +9,24 @@
 
 
     <url>
+        <loc>https://zwn2001.space/posts/Graduate-Works/DL/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%B1%87%E7%BC%961-2%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%92%8C%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2024-09-20T13:40:47.344Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://zwn2001.space/posts/Graduate-Works/Paper-Read/%E8%AF%BBpaper8-Copiloting-the-Copilots/</loc>
-        <lastmod>2024-09-19T02:54:22.546Z</lastmod>
+        <lastmod>2024-09-19T12:27:09.455Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zwn2001.space/posts/Graduate-Works/Paper-Read/%E8%AF%BBpaper7-RAP-Gen-Retrieval-Augmented-Patch-Generation-with-CodeT5/</loc>
+        <lastmod>2024-09-19T05:23:56.897Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -19,14 +35,6 @@
     <url>
         <loc>https://zwn2001.space/posts/Graduate-Works/Paper-Read/%E8%AF%BBpaper3-Katana-Dual-Slicing-Based-Context-for-Learning-Bug-Fixes/</loc>
         <lastmod>2024-09-17T10:09:59.605Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zwn2001.space/posts/Graduate-Works/Paper-Read/%E8%AF%BBpaper7-RAP-Gen-Retrieval-Augmented-Patch-Generation-with-CodeT5/</loc>
-        <lastmod>2024-09-17T10:08:45.510Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -67,14 +75,6 @@
     <url>
         <loc>https://zwn2001.space/posts/Graduate-Works/DL/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%B1%87%E7%BC%962-1%EF%BC%9A%E6%94%B9%E5%96%84%E6%B7%B1%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
         <lastmod>2024-09-14T11:36:32.787Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zwn2001.space/posts/Graduate-Works/DL/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%B1%87%E7%BC%961-2%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%92%8C%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2024-09-14T09:10:05.200Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
