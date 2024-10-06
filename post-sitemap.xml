@@ -10,7 +10,23 @@
 
     <url>
         <loc>https://zwn2001.space/posts/Graduate-Works/RL/RLHF-%E4%BB%8E%E5%9F%BA%E7%A1%80%E5%88%B0Claude%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E6%8E%A2%E7%B4%A2/</loc>
-        <lastmod>2024-10-05T12:09:12.095Z</lastmod>
+        <lastmod>2024-10-06T12:47:43.370Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zwn2001.space/posts/Graduate-Works/Course-Notes/%E7%A0%94%E4%B8%80%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/</loc>
+        <lastmod>2024-10-06T12:03:40.050Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zwn2001.space/posts/%E8%AF%BBpaper10-%E4%BB%A3%E7%A0%81%E7%9B%B8%E4%BC%BC%E5%BA%A6/</loc>
+        <lastmod>2024-10-05T13:38:14.518Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -35,14 +51,6 @@
     <url>
         <loc>https://zwn2001.space/posts/Graduate-Works/Course-Notes/%E7%A0%94%E4%B8%80%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</loc>
         <lastmod>2024-09-24T13:14:25.232Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zwn2001.space/posts/Graduate-Works/Course-Notes/%E7%A0%94%E4%B8%80%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/</loc>
-        <lastmod>2024-09-24T08:36:48.526Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
